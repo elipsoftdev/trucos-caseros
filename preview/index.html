@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#263b30">
+  <title>Trucos Caseros — concepto de rediseño</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="#inicio" aria-label="Trucos Caseros, inicio"><span>Trucos</span> Caseros<span class="wordmark-dot">.</span></a>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="#temas">Explorar temas</a>
+      <a href="#archivo">Del archivo</a>
+    </nav>
+    <a class="nav-cta" href="#proponer">Proponer un truco <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main id="inicio">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-shade"></div>
+      <div class="hero-copy">
+        <p class="eyebrow">Ideas de casa, conservadas en un archivo</p>
+        <h1 id="hero-title">Trucos<br>Caseros<span class="hero-period">.</span></h1>
+        <p class="hero-intro">Encuentra una idea para el hogar. Explora con curiosidad nuestro archivo histórico.</p>
+        <form id="search-form" class="search-form" role="search">
+          <label class="sr-only" for="search-input">Buscar trucos</label>
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input id="search-input" type="search" placeholder="¿Qué quieres resolver en casa?" autocomplete="off">
+          <button type="submit">Buscar <span aria-hidden="true">→</span></button>
+        </form>
+        <p class="search-hint">Busca por tema o palabra · 1.443 artículos en el archivo</p>
+      </div>
+      <a class="hero-scroll" href="#temas"><span class="scroll-line"></span> Descubre el archivo</a>
+      <span class="hero-image-note">Imagen conceptual · no pertenece al archivo histórico</span>
+    </section>
+
+    <section class="archive-notice" aria-label="Aviso del archivo">
+      <span class="notice-mark" aria-hidden="true">i</span>
+      <p><strong>Un archivo de otra época.</strong> Algunas ideas pueden estar desactualizadas. Los consejos de salud y seguridad requieren revisión antes de tratarse como recomendaciones vigentes.</p>
+      <a href="#sobre-el-archivo">Conoce más <span aria-hidden="true">↗</span></a>
+    </section>
+
+    <section class="section-block topics" id="temas">
+      <div class="section-heading">
+        <div><p class="eyebrow">Encuentra tu camino</p><h2>Explora por tema</h2></div>
+        <p class="section-aside">Los temas originales, organizados para descubrirlos con facilidad.</p>
+      </div>
+      <div class="topic-columns" id="topic-list" aria-live="polite">
+        <p class="loading-state">Abriendo el archivo…</p>
+      </div>
+    </section>
+
+    <section class="selected" id="archivo">
+      <div class="selected-head">
+        <p class="eyebrow">Una mirada al archivo</p>
+        <h2>Ideas que han pasado de casa en casa.</h2>
+        <p class="section-aside">Selección editorial de artículos conservados; su presencia aquí no confirma que sus consejos sigan vigentes.</p>
+      </div>
+      <div class="article-list" id="featured-list" aria-live="polite">
+        <p class="loading-state">Cargando selección…</p>
+      </div>
+      <div class="results" id="search-results" hidden>
+        <div class="results-head"><p class="eyebrow">Resultados del archivo</p><button id="clear-search" class="text-button" type="button">Limpiar búsqueda ×</button></div>
+        <p id="results-count" class="results-count"></p>
+        <div id="results-list" class="article-list"></div>
+      </div>
+    </section>
+
+    <section class="contribute" id="proponer">
+      <div class="contribute-inner">
+        <p class="eyebrow">La próxima página la escribes tú</p>
+        <h2>¿Tienes un truco para compartir?</h2>
+        <p>Comparte una idea con el equipo. En la versión final, cada propuesta pasará por revisión antes de formar parte del archivo.</p>
+        <button class="button-light" type="button" disabled>Formulario anónimo en la versión final <span aria-hidden="true">↗</span></button>
+        <p class="prototype-note">En esta maqueta el formulario todavía no recibe datos. En el sitio final, los envíos serán anónimos y moderados.</p>
+      </div>
+    </section>
+
+    <section class="about" id="sobre-el-archivo">
+      <div class="about-label"><span class="about-rule"></span><p>Sobre este archivo</p></div>
+      <p>Una colección heredada de ideas domésticas, conservada para volver a consultarla y entender su historia. El contenido original se mantiene reconocible, acompañado de contexto sobre su antigüedad.</p>
+      <a href="#inicio">Volver al inicio ↑</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="wordmark footer-wordmark" href="#inicio">Trucos Caseros<span class="wordmark-dot">.</span></a>
+    <p>Archivo histórico · Preservación digital por <a href="https://elipsoft.us">Elipsoft LLC</a></p>
+    <span>© Trucos Caseros</span>
+  </footer>
+
+  <dialog class="article-dialog" id="article-dialog" aria-labelledby="dialog-title">
+    <button class="dialog-close" id="dialog-close" type="button" aria-label="Cerrar artículo">×</button>
+    <p class="eyebrow" id="dialog-category"></p>
+    <h2 id="dialog-title"></h2>
+    <p class="dialog-warning">Artículo del archivo histórico. Su antigüedad no permite confirmar si las recomendaciones siguen vigentes.</p>
+    <div class="article-body" id="dialog-body"></div>
+    <button class="text-button dialog-return" id="dialog-return" type="button">← Volver a la página</button>
+  </dialog>
+</body>
+</html>
